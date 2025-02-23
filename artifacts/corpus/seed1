@@ -1,0 +1,13 @@
+{
+		"test":{
+			"*":"valZ",
+			"*v":"val0",
+			"keyv*":"val1",
+			"key*v":"val2",
+			"keyv?":"val3",
+			"key?v":"val4",
+			"keyv.":"val5",
+			"key.v":"val6",
+			"keyk*":{"key?":"val7"}
+		}
+}
