@@ -20,8 +20,12 @@ go test -fuzz=Fuzz -run=FuzzParseJSON
 ## Сбор покрытия
 
 ``` #bash
-mkdir -p testdata/fuzz
-cp -r "$( go env GOCACHE )/fuzz/$( go list )/" testdata/fuzz
+cp $( go env GOCACHE )/fuzz/$( go list )/FuzzParseJSON/* testdata/fuzz/FuzzParseJSON
 go test -coverprofile=coverage.out -run=FuzzParseJSON -v
-go tool cover -html=coverage.out
+go tool cover -html=coverage.out -o ./coverage.html
+```
+
+на хосте:
+``` #bash
+docker cp gjson_fuzz:/go/src/gjson-1.18.0/coverage.html .
 ```
